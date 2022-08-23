@@ -1,0 +1,44 @@
+
+[data-novi-id="8"]{
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 16px;
+}
+[data-novi-id="7"]{
+  color: rgb(10, 10, 10);
+}
+[data-novi-id="6"]{
+  color: #090f14;
+}
+[data-novi-id="5"]{
+  color: rgb(136, 48, 39);
+}
+[data-novi-id="4"]{
+  color: rgb(136, 48, 39);
+}
+@media (max-width: 479px){
+[data-novi-id="12"]{
+  font-size: 14px;
+}
+[data-novi-id="11"]{
+  font-size: 14px;
+}
+[data-novi-id="10"]{
+  font-weight: 400;
+}
+[data-novi-id="9"]{
+  font-size: 14px;
+}
+[data-novi-id="3"]{
+  font-weight: 400;
+}
+[data-novi-id="2"]{
+  font-size: 14px;
+}
+[data-novi-id="1"]{
+  font-size: 14px;
+}
+[data-novi-id="0"]{
+  font-size: 14px;
+}
+}
