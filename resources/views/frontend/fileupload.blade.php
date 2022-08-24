@@ -22,7 +22,7 @@
 
     {{-- <div class="container"> --}}
 
-        <div style="padding: 10px 10px ">
+        <div >
             
             <div class="col-md-12 col-sm-12 mb-2">
                  @php

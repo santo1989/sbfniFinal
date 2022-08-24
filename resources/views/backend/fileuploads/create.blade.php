@@ -35,7 +35,7 @@
                 </select>
                 <br>
 
-                <x-backend.form.input name="pdf" type="file"/>
+                <x-backend.form.input name="pdf" type="file" required />
 
                  <x-backend.form.textarea name="subject" />
 

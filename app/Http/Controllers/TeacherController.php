@@ -158,7 +158,7 @@ class TeacherController extends Controller
 
     public function uploadimg($file)
     {
-        $fileName = time() . '.' . $file->getClientOriginalExtension();
+        $fileName = time();
 
         Image::make($file)
             ->resize(270, 270)
