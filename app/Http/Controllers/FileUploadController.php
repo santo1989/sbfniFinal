@@ -38,7 +38,6 @@ class FileUploadController extends Controller
         $this->validate($request, [
             'subject' => 'required',
             'file_type' => 'required',
-            'file' => 'required',
         ]);
         try {
             FileUpload::create([
@@ -79,7 +78,7 @@ class FileUploadController extends Controller
 
             if ($request->hasFile('pdf')) {
                 $pdf = $request->file('pdf');
-                $name = time() . '.' . $pdf->getClientOriginalExtension();
+                $name = time();
                 $destinationPath = storage_path('/app/public/files/');
                 $pdf->move($destinationPath, $name);
                 $fileupload->pdf = $name;
@@ -130,7 +129,7 @@ class FileUploadController extends Controller
 
     public function uploadpdf($file)
     {
-        $fileName = time() . '.' . $file->getClientOriginalExtension();
+        $fileName = time();
         $destinationPath = storage_path('/app/public/files/');
         $file->move($destinationPath, $fileName);
         return $fileName;
