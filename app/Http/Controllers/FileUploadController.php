@@ -58,7 +58,6 @@ class FileUploadController extends Controller
             // 'fileupload' => $fileupload,
             'fileupload_show' => $fileupload,
         ]);
-        
     }
 
     public function edit(FileUpload $fileupload)
