@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link rel="stylesheet" href="{{ asset('ui/frontend/css/customstyle.css') }}">
   <link rel="stylesheet" href="{{ asset('ui/frontend/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('ui/frontend/css/novi.css') }}">
@@ -26,52 +26,53 @@
       opacity: .5;
     }
   </style>
-  
+
   <style>
-body {
-    font-family: 'Poppins'!important;font-size: 16px !important;
-}
-</style>
-  
+    body {
+      font-family: 'Poppins' !important;
+      font-size: 16px !important;
+    }
+  </style>
+
 </head>
 
-<body >
+<body>
 
- <!-- Messenger Chat Plugin Code -->
- <div id="fb-root">
+  <!-- Messenger Chat Plugin Code -->
+  <div id="fb-root">
 
-</div>
+  </div>
 
-<!-- Your Chat Plugin code -->
-<div id="fb-customer-chat" class="fb-customerchat">
-</div>
+  <!-- Your Chat Plugin code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
 
-<script>
-  var chatbox = document.getElementById('fb-customer-chat');
-  chatbox.setAttribute("page_id", "102055982511840");
-  chatbox.setAttribute("attribution", "biz_inbox");
-</script>
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "102055982511840");
+    chatbox.setAttribute("attribution", "biz_inbox");
+  </script>
 
-<!-- Your SDK code -->
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml: true,
-      version: 'v13.0'
-    });
-  };
+  <!-- Your SDK code -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml: true,
+        version: 'v13.0'
+      });
+    };
 
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 
-<!-- Your Chat Plugin code -->
+  <!-- Your Chat Plugin code -->
 
 
   <x-frontend.layouts.partials.header />
@@ -168,8 +169,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col-md-3 sec2col" style="background-color: #A14870
-;">
+      <div class="col-md-3 sec2col" style="background-color: #A14870;">
         <div class="media block-6 d-block text-center">
           <a href="#">
             <div class="icon d-flex justify-content-center align-items-center">
@@ -195,8 +195,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col-md-3 sec2col" style="background-color:#A14870
- ;">
+      <div class="col-md-3 sec2col" style="background-color:#A14870;">
         <div class="media block-6 d-block text-center">
           <a href="#">
             <div class="icon d-flex justify-content-center align-items-center">
@@ -315,71 +314,70 @@ body {
     </div>
   </section>
 
-{{--Gallary--}}
-<section class="section  bg-cover section-70 section-md-114 bg-default" style="padding-top:30px;  padding-bottom:80px; height:auto;">
-  
-<div class="container">
-    <h1 class="main text-center " style="color:#002833;"><b>Gallary</b></h1>
-      <hr class="divider bg-madison" />
-  <div class="row" style=" margin: 15px;">
-    <a href="{{ asset('ui/frontend/images/gallary/IMG10.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-      <img src="{{ asset('ui/frontend/images/gallary/IMG10.jpg') }}" class="img-fluid rounded">
-    </a>
-    <a href="{{ asset('ui/frontend/images/gallary/IMG8.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-      <img src="{{ asset('ui/frontend/images/gallary/IMG8.jpg') }}" class="img-fluid rounded">
-    </a>
-    <a href="{{ asset('ui/frontend/images/gallary/IMG11.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-      <img src="{{ asset('ui/frontend/images/gallary/IMG11.jpg') }}" class="img-fluid rounded">
-    </a>
-  </div>
-</div>
-<script>
-    $(document).on("click", '[data-toggle="lightbox"]', function(event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
-    });
-</script>
-</sction>
+  {{--Gallary--}}
+  <section class="section  bg-cover section-70 section-md-114 bg-default" style="padding-top:30px;  padding-bottom:80px; height:auto;">
 
- </section>
+    <div class="container">
+      <h1 class="main text-center " style="color:#002833;"><b>Gallary</b></h1>
+      <hr class="divider bg-madison" />
+      <div class="row" style=" margin: 15px;">
+        <a href="{{ asset('ui/frontend/images/gallary/IMG10.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+          <img src="{{ asset('ui/frontend/images/gallary/IMG10.jpg') }}" class="img-fluid rounded">
+        </a>
+        <a href="{{ asset('ui/frontend/images/gallary/IMG8.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+          <img src="{{ asset('ui/frontend/images/gallary/IMG8.jpg') }}" class="img-fluid rounded">
+        </a>
+        <a href="{{ asset('ui/frontend/images/gallary/IMG11.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+          <img src="{{ asset('ui/frontend/images/gallary/IMG11.jpg') }}" class="img-fluid rounded">
+        </a>
+      </div>
+    </div>
+    <script>
+      $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+      });
+    </script>
+  </section>
+  </section>
 
   {{--Our Skills Section--}}
   <section class="section  bg-cover section-70 section-md-114 bg-default" style="padding-top:80px;  padding-bottom:80px; background-color:#48A14D; height:auto;">
-    <div class ="container-fluid">
-    <div class="shell">
-      <h1 class="main text-center text-white" style="color:white; "><b>Our Skills</b> </h1>
-      <hr class="divider bg-white">
-      <div class="range range-50 range-xs-center offset-top-50 text-center">
-        <div class="cell-sm-6 cell-md-3">
-          <!-- Circle Progress bar-circle-->
-          <div class="progress-bar-circle progress-bar-modern" data-value="0.88" data-gradient="#A14870" data-thickness="10" data-empty-fill="#48A14D" data-size="130"><span></span></div>
-          <div class="offset-top-20">
-            <h6 class="text-bold text-white  pt-3">Lab</h6>
+    <div class="container-fluid">
+      <div class="shell">
+        <h1 class="main text-center text-white" style="color:white; "><b>Our Skills</b> </h1>
+        <hr class="divider bg-white">
+        <div class="range range-50 range-xs-center offset-top-50 text-center">
+          <div class="cell-sm-6 cell-md-3">
+            <!-- Circle Progress bar-circle-->
+            <div class="progress-bar-circle progress-bar-modern" data-value="0.88" data-gradient="#A14870" data-thickness="10" data-empty-fill="#48A14D" data-size="130"><span></span></div>
+            <div class="offset-top-20">
+              <h6 class="text-bold text-white  pt-3">Lab</h6>
+            </div>
           </div>
-        </div>
-        <div class="cell-sm-6 cell-md-3">
-          <!-- Circle Progress bar-circle-->
-          <div class="progress-bar-circle progress-bar-modern" data-value="0.9" data-gradient="#A14870" data-thickness="10" data-empty-fill="#48A14D" data-size="130"><span></span></div>
-          <div class="offset-top-20">
-            <h6 class="text-bold text-white pt-3 ">Teachers</h6>
+          <div class="cell-sm-6 cell-md-3">
+            <!-- Circle Progress bar-circle-->
+            <div class="progress-bar-circle progress-bar-modern" data-value="0.9" data-gradient="#A14870" data-thickness="10" data-empty-fill="#48A14D" data-size="130"><span></span></div>
+            <div class="offset-top-20">
+              <h6 class="text-bold text-white pt-3 ">Teachers</h6>
+            </div>
           </div>
-        </div>
-        <div class="cell-sm-6 cell-md-3">
-          <!-- Circle Progress bar-circle-->
-          <div class="progress-bar-circle progress-bar-modern" data-value="0.88" data-gradient="#A14870" data-thickness="10" data-empty-fill="#48A14D" data-size="130"><span></span></div>
-          <div class="offset-top-20">
-            <h6 class="text-bold text-white pt-3">Campus</h6>
+          <div class="cell-sm-6 cell-md-3">
+            <!-- Circle Progress bar-circle-->
+            <div class="progress-bar-circle progress-bar-modern" data-value="0.88" data-gradient="#A14870" data-thickness="10" data-empty-fill="#48A14D" data-size="130"><span></span></div>
+            <div class="offset-top-20">
+              <h6 class="text-bold text-white pt-3">Campus</h6>
+            </div>
           </div>
-        </div>
-        <div class="cell-sm-6 cell-md-3">
-          <!-- Circle Progress bar-circle-->
-          <div class="progress-bar-circle progress-bar-modern" data-value="0.95" data-gradient="#A14870" data-thickness="10" data-empty-fill="#48A14D" data-size="130"><span></span></div>
-          <div class="offset-top-20">
-            <h6 class="text-bold text-white pt-3">Library</h6>
+          <div class="cell-sm-6 cell-md-3">
+            <!-- Circle Progress bar-circle-->
+            <div class="progress-bar-circle progress-bar-modern" data-value="0.95" data-gradient="#A14870" data-thickness="10" data-empty-fill="#48A14D" data-size="130"><span></span></div>
+            <div class="offset-top-20">
+              <h6 class="text-bold text-white pt-3">Library</h6>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -559,25 +557,25 @@ body {
       @empty
       <p> No News </p>
       @endforelse
-      </div>
-      {{-- <div class="col-xs-12 col-sm-6 col-md-4 isotope-item">
+    </div>
+    {{-- <div class="col-xs-12 col-sm-6 col-md-4 isotope-item">
           <article class="post-news">
             <a href="news-post-page.html"><img class="img-responsive" src="{{ asset ('ui/frontend/images/blog/news-06-370x240.jpg') }}" alt="" width="370" height="240" /></a>
-      <div class="post-news-body">
-        <h6>
-          <a href="news-post-page.html" style="color:#999999;">Studying in the United States</a>
-        </h6>
-        <div class="offset-top-20">
-          <p>
-            International students increasingly want to come to the
-            United States for college or graduate school.
-          </p>
-        </div>
-        <div class="post-news-meta offset-top-20">
-          <span class="icon novi-icon icon-xs mdi mdi-calendar-clock text-middle text-madison"></span><span class="text-middle inset-left-10 text-italic" style="color:#5F9EA0;">2 days ago</span>
-        </div>
+    <div class="post-news-body">
+      <h6>
+        <a href="news-post-page.html" style="color:#999999;">Studying in the United States</a>
+      </h6>
+      <div class="offset-top-20">
+        <p>
+          International students increasingly want to come to the
+          United States for college or graduate school.
+        </p>
       </div>
-      </article>
+      <div class="post-news-meta offset-top-20">
+        <span class="icon novi-icon icon-xs mdi mdi-calendar-clock text-middle text-madison"></span><span class="text-middle inset-left-10 text-italic" style="color:#5F9EA0;">2 days ago</span>
+      </div>
+    </div>
+    </article>
     </div>
     </div> --}}
     {{-- <div class="range-xs-center" style="width:100%;">
@@ -608,23 +606,25 @@ body {
     <button class="santo"><a href="{{ route('home_alumni') }}"><span>See More Alumni</span></a></button>
     {{-- </div> --}}
   </section>
+
+
+
   {{--Ranking Section--}}
   <section class=" pb-5 bg-catskill" style="padding-top:80px;">
     <div class="shell isotope-wrap">
       <h1 class="main text-center" style="color:#002833;"><b>Our Ranking</b></h1>
       <p class="text-grey mb-5 text-center">See our Institution's Ranking</p>
       <hr class="divider bg-madison" />
-      <div class="container" >
+      <div class="container">
         <div class="row">
           @forelse ( $rankings as $ranking )
-          <div class="col-lg-3 col-md-3 col-sm-12 py-2 d-flex justify-content-center"style="padding-top:8px;">
+          <div class="col-lg-3 col-md-3 col-sm-12 py-2 d-flex justify-content-center" style="padding-top:8px;">
             <div class="card" style="width: 25rem;">
               <img src="{{ asset('storage/ranking/'.$ranking->img) }}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="text-center" style="color:#999999">Ranking By: {{ $ranking->rank_name }}</h5>
                 <h5 class="text-center" style="color:#5F9EA0">Our Position: {{ $ranking->rank_position }}</h5>
                 <h6 class="text-center" style="color:#5F9EA0">Ranking Year: {{ $ranking->rank_year }}</h6>
-                <p class="card-text">{{ $ranking->rank_description}}</p>
               </div>
             </div>
           </div>

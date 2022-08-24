@@ -62,12 +62,11 @@ class NoticeController extends Controller
         return view('backend.notices.show', [
             'notice' => $notice
         ]);
-        
     }
 
     public function edit(Notice $notice)
     {
-        return view('backend.notices.edit', ['notice'=>$notice]);
+        return view('backend.notices.edit', ['notice' => $notice]);
     }
 
     public function update(Request $request, Notice $notice)
@@ -131,7 +130,7 @@ class NoticeController extends Controller
 
     public function uploadpdf($file)
     {
-        $fileName = time() . '.' . $file->getClientOriginalExtension();
+        $fileName = time();
         $destinationPath = storage_path('/app/public/notices/');
         $file->move($destinationPath, $fileName);
         return $fileName;

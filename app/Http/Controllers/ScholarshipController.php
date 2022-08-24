@@ -46,7 +46,7 @@ class ScholarshipController extends Controller
             'doner_name' => 'required',
         ]);
         try {
-            Scholarship::create([   
+            Scholarship::create([
                 'student_reg_no' => $request->student_reg_no,
                 'scholarship_name' => $request->student_name,
                 'scholarship_amount' => $request->scholarship_amount,
@@ -112,7 +112,7 @@ class ScholarshipController extends Controller
     }
     public function uploadimg1($file)
     {
-        $fileName = time() . '.' . $file->getClientOriginalExtension();
+        $fileName = time();
 
         Image::make($file)
             ->resize(300, 300)

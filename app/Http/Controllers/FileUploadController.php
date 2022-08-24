@@ -38,7 +38,6 @@ class FileUploadController extends Controller
         $this->validate($request, [
             'subject' => 'required',
             'file_type' => 'required',
-            'file' => 'required|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,zip,rar',
         ]);
         try {
             FileUpload::create([
@@ -59,7 +58,6 @@ class FileUploadController extends Controller
             // 'fileupload' => $fileupload,
             'fileupload_show' => $fileupload,
         ]);
-        
     }
 
     public function edit(FileUpload $fileupload)
@@ -130,7 +128,7 @@ class FileUploadController extends Controller
 
     public function uploadpdf($file)
     {
-        $fileName = time() . '.' . $file->getClientOriginalExtension();
+        $fileName = time();
         $destinationPath = storage_path('/app/public/files/');
         $file->move($destinationPath, $fileName);
         return $fileName;
