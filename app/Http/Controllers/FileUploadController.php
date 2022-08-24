@@ -38,7 +38,7 @@ class FileUploadController extends Controller
         $this->validate($request, [
             'subject' => 'required',
             'file_type' => 'required',
-            'file' => 'required|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,zip,rar',
+            'file' => 'required',
         ]);
         try {
             FileUpload::create([
