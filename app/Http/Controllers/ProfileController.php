@@ -164,7 +164,7 @@ class ProfileController extends Controller
 
     public function uploadimg($file)
     {
-        $fileName = time();
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(270, 270)

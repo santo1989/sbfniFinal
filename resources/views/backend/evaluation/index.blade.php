@@ -16,11 +16,9 @@
     <div class="card mb-4" style="width:100%">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Grade
+            <span class="ml-1">Teachers Evaluation</span>
 
-            {{-- @can('create-category') --}}
-            <a class="btn btn-sm btn-info" href="#">Add New</a>
-            {{-- @endcan --}}
+         
 
         </div>
         <div class="card-body">

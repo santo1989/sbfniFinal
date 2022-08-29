@@ -112,7 +112,7 @@ class ScholarshipController extends Controller
     }
     public function uploadimg1($file)
     {
-        $fileName = time();
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(300, 300)

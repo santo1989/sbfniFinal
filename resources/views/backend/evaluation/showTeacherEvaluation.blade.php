@@ -7,36 +7,23 @@
         <x-backend.layouts.elements.breadcrumb>
             <x-slot name="pageHeader"> Teachers </x-slot>
 
-            <li class="breadcrumb-item"><a href="{{ route('grade.index')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
             <li class="breadcrumb-item active">Teahers</li>
 
         </x-backend.layouts.elements.breadcrumb>
     </x-slot>
 
-    <div class="card mb-4" style="width:100%">
-        <div class="card-header">
-            <i class="fas fa-table me-1"></i>
-            Grade
-
-            {{-- @can('create-category') --}}
-            <a class="btn btn-sm btn-info" href="{{ route('grade.create') }}">Add New</a>
-            {{-- @endcan --}}
-
-        </div>
-        <div class="card-body">
 
             <x-backend.layouts.elements.message :fmessage="session('message')" />
 
-            <!-- <table id="datatablesSimple"> -->
-            <form method="GET" action="{{ route('grade.index') }}">
-                <x-backend.form.input style="width: 200px;" name='search' />
-
-            </form>
-            <table class="table" style="overflow: scroll;">
+            
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <i class="fas fa-table me-1"></i>
+            <span class="ml-1">Teachers Evaluation</span>
                 <thead>
                     <tr>
                         <th>Sl#</th>
-                        <th>Course Name/th>
+                        <th>Course Name</th>
                         <th>Course Code</th>
                         <th>Is Prepared</th>
                         <th>Knows his subject</th>
@@ -91,7 +78,6 @@
 
                 </tbody>
             </table>
-        </div>
-    </div>
+     
 
 </x-backend.layouts.master>

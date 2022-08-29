@@ -84,7 +84,7 @@ class QuotationController extends Controller
 
             if ($request->hasFile('img')) {
                 $img = $request->file('img');
-                $name =  time();
+                $name =  time() . '.' . $file->getClientOriginalExtension();
                 $destinationPath = storage_path('/app/public/quotations/');
                 $img->move($destinationPath, $name);
                 $quotation->img = $name;
@@ -135,7 +135,7 @@ class QuotationController extends Controller
 
     public function uploadimg($file)
     {
-        $fileName = time();
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(364, 105)

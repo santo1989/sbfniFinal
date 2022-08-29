@@ -26,21 +26,30 @@
             <form action="{{ route('profiles.store') }}" enctype="multipart/form-data" method="post">
                 @csrf
                 <input type="hidden" name="user_id" value={{ auth()->user()->id }}>
+                
                 <x-backend.form.input name="full_name"/>
+                <br/>
+                <x-backend.form.input name="email"/>
+                <br/>
                 <x-backend.form.input name="phone"/>
+                <br/>
+                <x-backend.form.input name="father_name"/>
+                <br/>
+                <x-backend.form.input name="mother_name"/>
+                <br/>
                 <x-backend.form.input name="address"/>
-                <x-backend.form.input name="session"/>
-                <x-backend.form.input name="course_name"/>
-                <x-backend.form.input name="current_status"/>
-                <x-backend.form.input name="result"/>
+                <br/>
                 <x-backend.form.input name="nid"/>
-                <x-backend.form.input name="dob" type="date"/>
+                <br/> 
+                <x-backend.form.input name="dob" type="date"/> 
+                <br/>
                 <select class="form-select mb-2" name="gender" id="" aria-label="Gender">
                     <option value="">Select One</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="others">Other</option>
                 </select>
+                <br/>
                 <select class="form-select mb-2" name="blood_group" id="" aria-label="Blood Group">
                     <option value="">Select One</option>
                     <option value="A+">A+</option>
@@ -52,20 +61,31 @@
                     <option value="O+">O+</option>
                     <option value="O-">O-</option>
                 </select>
+                <br/>
                 <select class="form-select mb-2" name="marital_status" id="" aria-label="Marital Status">
                     <option value="">Select One</option>
                     <option value="Single">Single</option>
                     <option value="Married">Married</option>
                     <option value="Divorced">Divorced</option>
                     <option value="Widowed">Widowed</option>
-                </select>
-                <x-backend.form.input name="father_name"/>
-                <x-backend.form.input name="mother_name"/>
+                </select> 
+                <br/>
                 <x-backend.form.input name="father_phone"/>
+                <br/>
                 <x-backend.form.input name="parent_address"/>
+                <br/>
                 <x-backend.form.input name="current_year"/>
+                <br/>
+                <input type="number" name="current_semester" class="form-control mb-2">
+                <br/>
+
+
+                {{-- <x-backend.form.input name="session"/>
+                <x-backend.form.input name="course_name"/>
+                <x-backend.form.input name="current_status"/>
+                <x-backend.form.input name="result"/>
                 <x-backend.form.input name="current_semester"/>
-                <x-backend.form.input name="student_id"/>
+                <x-backend.form.input name="student_id"/> --}}
                 <x-backend.form.input name="image" type="file"/>
                 
                 

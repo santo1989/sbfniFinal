@@ -43,7 +43,7 @@ class AlumniController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'required',
         ]);
         try {
             Alumni::create([
@@ -96,7 +96,7 @@ class AlumniController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $name =  time();
+            $name =  time() . '.' . $img->getClientOriginalExtension();
             $destinationPath = storage_path('/app/public/alumni/');
             $img->move($destinationPath, $name);
             $alumni->img = $name;
@@ -123,7 +123,7 @@ class AlumniController extends Controller
 
     public function uploadimg($file)
     {
-        $fileName = time();
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(300, 300)

@@ -59,7 +59,7 @@ class NewsController extends Controller
             'script2' => 'required',
             'img1' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'img2' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            
+
         ]);
         //  @dd($request);
         try {
@@ -90,7 +90,7 @@ class NewsController extends Controller
 
     public function uploadimg1($file)
     {
-        $fileName = time() ;
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(770, 500)
@@ -101,7 +101,7 @@ class NewsController extends Controller
 
     public function uploadimg2($file)
     {
-        $fileName = time() ;
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(770, 500)
@@ -111,7 +111,7 @@ class NewsController extends Controller
     }
     public function uploadimg3($file)
     {
-        $fileName = time() ;
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(770, 500)
@@ -122,7 +122,7 @@ class NewsController extends Controller
 
     public function uploadimg4($file)
     {
-        $fileName = time() ;
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(770, 500)
@@ -132,7 +132,7 @@ class NewsController extends Controller
     }
     public function uploadimg5($file)
     {
-        $fileName = time();
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(770, 500)
@@ -143,7 +143,7 @@ class NewsController extends Controller
 
     public function uploadimg6($file)
     {
-        $fileName = time() ;
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(770, 500)
@@ -153,7 +153,7 @@ class NewsController extends Controller
     }
     public function uploadimg7($file)
     {
-        $fileName = time() ;
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(770, 500)
@@ -164,7 +164,7 @@ class NewsController extends Controller
 
     public function uploadimg8($file)
     {
-        $fileName = time() ;
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(770, 500)
@@ -175,7 +175,7 @@ class NewsController extends Controller
 
     public function uploadimg9($file)
     {
-        $fileName = time() ;
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(170, 170)
@@ -299,4 +299,3 @@ class NewsController extends Controller
         return redirect()->route('news.trashed')->withMessage('Successfully Deleted Permanently!');
     }
 }
-

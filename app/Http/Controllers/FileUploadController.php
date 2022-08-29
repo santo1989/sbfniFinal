@@ -77,7 +77,7 @@ class FileUploadController extends Controller
 
             if ($request->hasFile('pdf')) {
                 $pdf = $request->file('pdf');
-                $name = time();
+                $name = time() . '.' . $pdf->getClientOriginalExtension();
                 $destinationPath = storage_path('/app/public/files/');
                 $pdf->move($destinationPath, $name);
                 $fileupload->pdf = $name;
@@ -128,7 +128,7 @@ class FileUploadController extends Controller
 
     public function uploadpdf($file)
     {
-        $fileName = time();
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
         $destinationPath = storage_path('/app/public/files/');
         $file->move($destinationPath, $fileName);
         return $fileName;

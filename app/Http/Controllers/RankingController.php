@@ -89,7 +89,7 @@ class RankingController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $name =  time();
+            $name =  time() . '.' . $img->getClientOriginalExtension();
             $destinationPath = storage_path('/app/public/ranking/');
             $img->move($destinationPath, $name);
             $ranking->img = $name;
@@ -113,7 +113,7 @@ class RankingController extends Controller
     }
     public function uploadimg($file)
     {
-        $fileName = time();
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(300, 300)

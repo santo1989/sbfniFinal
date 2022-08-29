@@ -60,10 +60,17 @@
                 
                 @endforeach
                 @else
-                <script>
+                
+                @foreach($currentcourseslist as $currentcourse)
+                        
+                        <li class="list-group-item"><div class="d-flex justify-content-between"><div>{{ $currentcourse->course->course_name }} (Teacher: {{ $currentcourse->teacher->name }})</div> <a href="#" class="btn btn-success"></a></div></li>
+                @endforeach
+
+
+                {{-- <script>
                     document.getElementById('listdiv').style.display = 'none';
                     document.getElementById("table-spreid").setAttribute("class", "col-md-12");
-                </script>
+                </script> --}}
                 @endif
                 
             </ul>

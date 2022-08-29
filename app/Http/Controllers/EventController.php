@@ -46,7 +46,7 @@ class EventController extends Controller
             'date' => 'required',
             'time' => 'required',
             'location' => 'required',
-            'img1' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'img1' => 'required',
         ]);
         
         try {
@@ -159,7 +159,7 @@ class EventController extends Controller
     public function uploadimg($file)
     {
         
-         $fileName = time() ;
+         $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(420, 420)
@@ -171,7 +171,7 @@ class EventController extends Controller
     public function uploadimg2($file)
     {
        
-         $fileName = time() ;
+         $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)
             ->resize(420, 420)

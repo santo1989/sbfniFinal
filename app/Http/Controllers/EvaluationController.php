@@ -33,7 +33,6 @@ class EvaluationController extends Controller
             'organized' => 'required',
             'currentcourse_id' => 'required',
             'teacher_id' => 'required',
-            'currentcourse_id' => 'required',
         ]);
         // die("check");
         // dd($request->all());
@@ -56,7 +55,7 @@ class EvaluationController extends Controller
             'student_id' => $request->student_id,
             'currentcourse_id' => $request->currentcourse_id,
             'year' => $request->year,
-            'course_year' => auth()->user()->profile->current_semester,
+            'course_year' => auth()->user()->profile->current_year,
             'teacher_id' => $request->teacher_id
 
         ]);
@@ -64,10 +63,10 @@ class EvaluationController extends Controller
         $newEvaluation->score = $score;
         $newEvaluation->update();
         return redirect()->route('teacher.evaluation.show', [$request->student_id, $request->year]);
-
     }
 
-    public function index(){
+    public function index()
+    {
         $currentcourses = CurrentCourse::all();
         return view('backend.evaluation.index', compact('currentcourses'));
     }

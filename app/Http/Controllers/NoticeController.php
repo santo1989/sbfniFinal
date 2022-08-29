@@ -130,7 +130,7 @@ class NoticeController extends Controller
 
     public function uploadpdf($file)
     {
-        $fileName = time();
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
         $destinationPath = storage_path('/app/public/notices/');
         $file->move($destinationPath, $fileName);
         return $fileName;

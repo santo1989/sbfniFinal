@@ -21,6 +21,7 @@
         <div class="card-body">                
                 
                 <p>full_name : <p>{{$show_profile->full_name }}</p></p>
+                <p>email : <p>{{$show_profile->email }}</p></p>
                 <p>phone : <p>{{$show_profile->phone }}</p></p>
                 <p>address : <p>{{$show_profile->address }}</p></p>
                 <p>session : <p>{{$show_profile->session }}</p></p>
