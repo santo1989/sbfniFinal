@@ -67,7 +67,11 @@
                         <td>
                             <a class="btn btn-info btn-sm" href="{{ route('events.show', ['event' => $event->id]) }}">Show</a>
 
+<<<<<<< HEAD
                             <a class="btn btn-warning btn-sm" href="{{ route('events.edit', ['event' => $event->id]) }}">Edit</a>
+=======
+                            <a class="btn btn-warning btn-sm" href="{{ route('events.edit', ['event_id' => $event->id]) }}">Edit</a>
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
 
                             <form style="display:inline" action="{{ route('events.destroy', ['event' => $event->id]) }}" method="post">
                                 @csrf

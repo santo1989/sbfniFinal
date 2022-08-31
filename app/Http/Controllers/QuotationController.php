@@ -65,6 +65,7 @@ class QuotationController extends Controller
         ]);
     }
 
+<<<<<<< HEAD
     public function edit(Quotation $quotation)
     {
         return view('backend.quotations.edit', [
@@ -75,6 +76,20 @@ class QuotationController extends Controller
     public function update(Request $request, Quotation $quotation)
     {
         try {
+=======
+    public function edit($single_quotation_Edit)
+    {
+        $single_quotation_Edit = Quotation::Find($single_quotation_Edit);
+        return view('backend.quotations.edit', [
+            'single_quotation_Edit' => $single_quotation_Edit
+        ]);
+    }
+
+    public function update(Request $request, $single_update)
+    {
+        try {
+            $single_update = Quotation::Find($single_update);
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
             $requestData = [
                 'title' => $request->title,
                 // 'img' => $this->uploadimg(request()->file('img')),
@@ -82,6 +97,7 @@ class QuotationController extends Controller
                 'author_name' => $request->author_name,
             ];
 
+<<<<<<< HEAD
             if ($request->hasFile('img')) {
                 $img = $request->file('img');
                 $name =  time() . '.' . $file->getClientOriginalExtension();
@@ -91,6 +107,21 @@ class QuotationController extends Controller
             }
 
             $quotation->update($requestData);
+=======
+            // if ($request->hasFile('img')) {
+            //     $img = $request->file('img');
+            //     $name =  time() . '.' . $file->getClientOriginalExtension();
+            //     $destinationPath = storage_path('/app/public/quotations/');
+            //     $img->move($destinationPath, $name);
+            //     $quotation->img = $name;
+            // }
+
+            if (request()->file('img')) {
+                $requestData['img'] = $this->uploadimg(request()->file('img'));
+            }
+
+            $single_update->update($requestData);
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
 
             return redirect()->route('quotations.index')->withMessage('Successfully Updated!');
         } catch (QueryException $e) {

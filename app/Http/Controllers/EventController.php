@@ -80,6 +80,7 @@ class EventController extends Controller
         ]);
     }
 
+<<<<<<< HEAD
     public function edit(Event $event)
     {
         return view('backend.events.edit', [
@@ -90,6 +91,22 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         try {
+=======
+    public function edit($event_id)
+    {
+        $event = Event::find($event_id);
+        return view('backend.events.edit', [
+            'single_event' => $event
+        ]);
+    }
+
+    public function update(Request $request, $event_id)
+    {
+        
+        // dd($request->all());
+        try {
+            $event = Event::find($event_id);
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
             $requestData = [
                 // 'img1' => $this->uploadimg(request()->file('img1')),
                 'description' => $request->description,
@@ -111,10 +128,19 @@ class EventController extends Controller
             if (request()->file('lecturer_img')) {
                 $requestData['lecturer_img'] = $this->uploadimg2(request()->file('lecturer_img'));
             }
+<<<<<<< HEAD
             $event->update($requestData);
 
 
             return redirect()->route('events.index')->withMessage('Successfully Created!');
+=======
+            
+            //  dd($requestData);
+            $event->update($requestData);
+
+
+            return redirect()->route('events.index')->withMessage('Successfully Updated!');
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
         } catch (QueryException $e) {
             return redirect()->back()->withInput()->withErrors($e->getMessage());
         }
@@ -170,7 +196,11 @@ class EventController extends Controller
 
     public function uploadimg2($file)
     {
+<<<<<<< HEAD
        
+=======
+       sleep(1);
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
          $fileName = time() . '.' . $file->getClientOriginalExtension();
 
         Image::make($file)

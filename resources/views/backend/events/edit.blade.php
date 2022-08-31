@@ -30,11 +30,16 @@
             </div>
             @endif
 
+<<<<<<< HEAD
             <form action="{{ route('events.update', ['event' => $events->first()->id]) }}" method="post" enctype="multipart/form-data">
+=======
+            <form action="{{ route('events.update', ['event_id' => $single_event->id]) }}" method="post" enctype="multipart/form-data">
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
                 @csrf
                 @method('put')
 
 
+<<<<<<< HEAD
                 <x-backend.form.input name="title" type="text" :value="$events->first()->title"/>
 
                 <x-backend.form.input name="img1" type="file" :value="$events->first()->img1"/>
@@ -65,6 +70,38 @@
 
                 <x-backend.form.textarea name="lecturer_description">
                 {{ $events->first()->lecturer_description }}
+=======
+                <x-backend.form.input name="title" type="text" :value="$single_event->title"/>
+
+                <x-backend.form.input name="img1" type="file" :value="$single_event->img1"/>
+                
+                <x-backend.form.textarea name="description" >
+                {{ $single_event->description }}
+                </x-backend.form.textarea>
+
+                <x-backend.form.input name="date" type="date" :value="$single_event->date"/>
+
+                <x-backend.form.input name="time" type="time" :value="$single_event->time"/>
+                
+                <x-backend.form.input name="fee" type="number" :value="$single_event->fee"/>
+
+                <x-backend.form.input name="location" :value="$single_event->location"/>
+
+                <x-backend.form.textarea name="bring"  >
+                {{ $single_event->bring }}
+                 </x-backend.form.textarea>
+ 
+                 <x-backend.form.input name="lecturer_name" :value="$single_event->lecturer_name"/>
+
+                <x-backend.form.input name="lecturer_phone" :value="$single_event->lecturer_phone"/>
+
+                <x-backend.form.input name="lecturer_email" type="email" :value="$single_event->lecturer_email"/>
+
+                <x-backend.form.input name="lecturer_img" type="file" :value="$single_event->lecturer_img"/>
+
+                <x-backend.form.textarea name="lecturer_description">
+                {{ $single_event->lecturer_description }}
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
                   </x-backend.form.textarea>
 
                 

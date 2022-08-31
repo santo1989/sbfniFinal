@@ -98,7 +98,11 @@ Route::middleware('auth')->group(function () {
 
     // User
 
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
     Route::get('/admin/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/admin/users/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/admin/users', [UserController::class, 'store'])->name('users.store');
@@ -113,16 +117,29 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/events/trashed-events/{events}/restore', [EventController::class, 'restore'])->name('events.restore');
     Route::delete('/admin/events/trashed-events/{events}/delete', [EventController::class, 'delete'])->name('events.delete');
 
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
     Route::get('/admin/events', [EventController::class, 'index'])->name('events.index');
     Route::get('/admin/events/create', [EventController::class, 'create'])->name('events.create');
     Route::post('/admin/events', [EventController::class, 'store'])->name('events.store');
     Route::get('/admin/events/{event}', [EventController::class, 'show'])->name('events.show');
+<<<<<<< HEAD
     Route::get('/admin/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
     Route::put('/admin/events/{event}', [EventController::class, 'update'])->name('events.update');
     Route::delete('/admin/events/{event}', [EventController::class, 'destroy'])->name('events.destroy');
 
 
+=======
+    Route::get('/admin/events/{event_id}/edit', [EventController::class, 'edit'])->name('events.edit');
+    Route::put('/admin/events/{event_id}', [EventController::class, 'update'])->name('events.update');
+    Route::delete('/admin/events/{event}', [EventController::class, 'destroy'])->name('events.destroy');
+
+
+
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
     //Profiles
     Route::get('/admin/profiles/trashed-profiles', [ProfileController::class, 'trash'])
         ->name('profiles.trashed');
@@ -139,7 +156,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/notices/trashed-notices/{notice}/restore', [NoticeController::class, 'restore'])->name('notices.restore');
     Route::delete('/admin/notices/trashed-notices/{notice}/delete', [NoticeController::class, 'delete'])->name('notices.delete');
 
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
     Route::get('/admin/notices', [NoticeController::class, 'index'])->name('notices.index');
     Route::get('/admin/notices/create', [NoticeController::class, 'create'])->name('notices.create');
     Route::post('/admin/notices', [NoticeController::class, 'store'])->name('notices.store');
@@ -156,7 +177,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/news/trashed-news/{news}/restore', [NewsController::class, 'restore'])->name('news.restore');
     Route::delete('/admin/news/trashed-news/{news}/delete', [NewsController::class, 'delete'])->name('news.delete');
 
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
     Route::get('/admin/news', [NewsController::class, 'index'])->name('news.index');
     Route::get('/admin/news/create', [NewsController::class, 'create'])->name('news.create');
     Route::post('/admin/news', [NewsController::class, 'store'])->name('news.store');
@@ -172,13 +197,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/quotations/trashed-quotations/{quotation}/restore', [QuotationController::class, 'restore'])->name('quotations.restore');
     Route::delete('/admin/quotations/trashed-quotations/{quotation}/delete', [QuotationController::class, 'delete'])->name('quotations.delete');
 
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
     Route::get('/admin/quotations', [QuotationController::class, 'index'])->name('quotations.index');
     Route::get('/admin/quotations/create', [QuotationController::class, 'create'])->name('quotations.create');
     Route::post('/admin/quotations', [QuotationController::class, 'store'])->name('quotations.store');
     Route::get('/admin/quotations/{quotation}', [QuotationController::class, 'show'])->name('quotations.show');
+<<<<<<< HEAD
     Route::get('/admin/quotations/{quotation}/edit', [QuotationController::class, 'edit'])->name('quotations.edit');
     Route::put('/admin/quotations/{quotation}', [QuotationController::class, 'update'])->name('quotations.update');
+=======
+    Route::get('/admin/quotations/{single_quotation_Edit}/edit', [QuotationController::class, 'edit'])->name('quotations.edit');
+    Route::put('/admin/quotations/{single_update}', [QuotationController::class, 'update'])->name('quotations.update');
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
     Route::delete('/admin/quotations/{quotation}', [QuotationController::class, 'destroy'])->name('quotations.destroy');
 
 
@@ -243,11 +277,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin/fileupload/{fileupload}', [FileUploadController::class, 'destroy'])->name('fileupload.destroy');
 
     //CurrentCourses
+<<<<<<< HEAD
     
     Route::resource('admin/current_courses', CurrentCourseController::class);
 
     //CourseRegistration
     
+=======
+
+    Route::resource('admin/current_courses', CurrentCourseController::class);
+
+    //CourseRegistration
+
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
     Route::get('/admin/course_registration/create', [CourseRegistrationController::class, 'create'])->name('course_registration.create');
     Route::get('/admin/course_registration', [CourseRegistrationController::class, 'index'])->name('course_registration.index');
 
@@ -271,8 +313,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/course_registration/store/{course_id}/{student_id}', [CourseRegistrationController::class, 'store'])->name('course-registration-store');
 
     Route::get('/admin/get-courses/{course_year}/{year}/{student_id}', [ResultController::class, 'getCourses'])->name('result_getcourses');
+<<<<<<< HEAD
 
     
+=======
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
 });
 
 Route::resource('/admin/message', MessageController::class);
@@ -288,3 +333,16 @@ Route::get('/foo', function () {
     Artisan::call('storage:link');
 });
 
+<<<<<<< HEAD
+=======
+Route::get('/cleareverything', function () {
+    $clearcache = Artisan::call('cache:clear');
+    echo "Cache cleared<br>";
+
+    $clearview = Artisan::call('view:clear');
+    echo "View cleared<br>";
+
+    $clearconfig = Artisan::call('config:cache');
+    echo "Config cleared<br>";
+});
+>>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
