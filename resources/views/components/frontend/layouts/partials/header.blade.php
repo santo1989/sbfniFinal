@@ -72,7 +72,7 @@
                   <ul class="mega-links">
                     <li><a href="{{ route('courses') }}">Courses</a></li>
                     <li><a href="{{ route('home_alumni') }}">Alumni</a></li>
-                    <li><a href="{{ route('curriculam') }}">Course Curriculam</a></li>
+                    <li><a href="{{ route('curriculam') }}">Curriculam</a></li>
                   </ul>
                 </div>
                 <div class="row">
@@ -99,18 +99,19 @@
                   <header>Admission</header>
                   <ul class="mega-links">
 
-                    <li><a href="{{ route('admission_procedure') }}">Admission Procedure</a></li>
+                    <li><a href="{{ route('admission_procedure') }}">Procedure</a></li>
                     <li><a href="{{ route('download') }}">Admission Form</a></li>
-                    <li><a href="#">Financial Aid & Scholarship</a></li>
+                    <li><a href="#">Financial Aid</a></li>
+                    <li><a href="#">Scholarship</a></li>
                    
                   </ul>
                 </div>
                 <div class="row">
                   <header>Guidelines</header>
                   <ul class="mega-links">
-                    <li><a href="{{ route('admission_information') }}">Admission Eligibility</a></li>
-                    <li><a href="{{ route('guidelines') }}">Admission Guidelines</a></li>
-                    <li><a href="{{ route('admission_procedure') }}">Admission Process</a></li>
+                    <li><a href="{{ route('admission_information') }}">Eligibility</a></li>
+                    <li><a href="{{ route('guidelines') }}">Guidelines</a></li>
+                    <li><a href="{{ route('admission_procedure') }}">Process</a></li>
                  
                   </ul>
                 </div>
@@ -119,9 +120,9 @@
                   <header>Tution Fee & Scholarship</header>
                   <ul class="mega-links">
                     <li><a href="{{ route('tution_fee') }}">Tution Fee</a></li>
-                    <li><a href="{{ route('payment_guidelines') }}">Payment Guidelines</a></li>
+                    <li><a href="{{ route('payment_guidelines') }}">Payment</a></li>
                     <li><a href="{{ route('scholarship') }}">Local Students</a></li>
-                    <li><a href="{{ route('scholarship') }}">International Students</a></li>
+                    <li><a href="{{ route('scholarship') }}">Int. Students</a></li>
                   </ul>
                 </div>
               </div>

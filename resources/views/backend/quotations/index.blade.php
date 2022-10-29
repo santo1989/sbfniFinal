@@ -58,11 +58,7 @@
                         <td>
                             <a class="btn btn-info btn-sm" href="{{ route('quotations.show', ['quotation' => $quotation->id]) }}">Show</a>
 
-<<<<<<< HEAD
-                            <a class="btn btn-warning btn-sm" href="{{ route('quotations.edit', ['quotation' => $quotation->id]) }}">Edit</a>
-=======
                             <a class="btn btn-warning btn-sm" href="{{ route('quotations.edit', ['single_quotation_Edit' => $quotation->id]) }}">Edit</a>
->>>>>>> b35dd89459d05d89a3c8a65a88074fa2956ce4ae
 
                             <form style="display:inline" action="{{ route('quotations.destroy', ['quotation' => $quotation->id]) }}" method="post">
                                 @csrf

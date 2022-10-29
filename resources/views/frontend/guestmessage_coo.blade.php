@@ -26,7 +26,7 @@
               </div>
             </a>
             <div class="title media-body p-2 mt-3">
-              <h3 class="heading  mt-3" style="margin:0 auto; ">COO, SBFNI</h3>
+              <h3 class="heading  mt-3" style="margin:0 auto; ">COO, SBF-B</h3>
               <p class="">SBF nursing institute lalmunirhot is one of the most benevolent private nursing institute in bangladesh. It is affiliated by bangladesh nursing and midwifery council. This institute was established for mankind in 2019. </p>
             </div>
           </div>

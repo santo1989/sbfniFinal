@@ -321,13 +321,13 @@
       <h1 class="main text-center " style="color:#002833;"><b>Gallary</b></h1>
       <hr class="divider bg-madison" />
       <div class="row" style=" margin: 15px;">
-        <a href="{{ asset('ui/frontend/images/gallary/IMG10.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+        <a href="{{ asset('ui/frontend/images/gallary/IMG10.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4 px-2 py-2">
           <img src="{{ asset('ui/frontend/images/gallary/IMG10.jpg') }}" class="img-fluid rounded">
         </a>
-        <a href="{{ asset('ui/frontend/images/gallary/IMG8.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+        <a href="{{ asset('ui/frontend/images/gallary/IMG8.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4 px-2 py-2">
           <img src="{{ asset('ui/frontend/images/gallary/IMG8.jpg') }}" class="img-fluid rounded">
         </a>
-        <a href="{{ asset('ui/frontend/images/gallary/IMG11.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+        <a href="{{ asset('ui/frontend/images/gallary/IMG11.jpg') }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4 px-2 py-2">
           <img src="{{ asset('ui/frontend/images/gallary/IMG11.jpg') }}" class="img-fluid rounded">
         </a>
       </div>

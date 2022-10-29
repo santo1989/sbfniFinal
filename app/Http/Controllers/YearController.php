@@ -35,6 +35,7 @@ class YearController extends Controller
     {
         $students = User::where('role_id', '=', '3')->get();
         $course = Course::all();
+       
 
         return view('backend.year.create', ['course' => $course, 'students' => $students]);
     }

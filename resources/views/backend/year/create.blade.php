@@ -30,8 +30,9 @@
                 <select name="student_id" class="form-control" id="student_id" >
                     
                     <option value="">Select Year</option>
-          
+        
                     @foreach($students as $student)
+                    
                     <option value="{{ $student->id }}">{{ $student->name }} ({{ $student->reg_num ? $student->reg_num : $student->roll_num }})</option>
                     @endforeach
                 </select>
