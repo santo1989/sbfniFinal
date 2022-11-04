@@ -30,7 +30,7 @@
             </div>
             @endif
 
-            <form action="{{ route('quotations.update', ['single_update' => $single_quotation_Edit->id]) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('quotations.update', ['quotation' => $single_quotation_Edit->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <x-backend.form.input name="title" :value="$single_quotation_Edit->title"/> 

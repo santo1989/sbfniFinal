@@ -4,102 +4,145 @@
             @can('admin') 
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">List</div>
-                <a class="nav-link" href="{{ route('admin.home') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Home
-                </a>
-                <a class="nav-link" href="{{ route('notices.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                   Notice
-                </a>
-                <a class="nav-link" href="{{ route('events.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Events
-                </a>
-                <a class="nav-link" href="{{ route('news.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    News
-                </a>
-                <a class="nav-link" href="{{ route('teachers.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Teachers
-                </a>
-                <a class="nav-link" href="{{ route('quotations.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Quotation
-                </a>
-                <a class="nav-link" href="{{ route('internship.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Internship
+                {{--fronend management--}}
+
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#website-controller" aria-expanded="false" aria-controls="website-controller">
+                    <div class="sb-nav-link-icon"><i class="fas fa-sliders-h"></i></div>
+                    Website Controller
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
 
-                <a class="nav-link" href="{{ route('scholarship.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Scholarship
+                <div class="collapse" id="website-controller" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('notices.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Notice
+                        </a>
+                        <a class="nav-link" href="{{ route('events.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Events
+                        </a>
+                        <a class="nav-link" href="{{ route('news.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            News
+                        </a>
+                        <a class="nav-link" href="{{ route('quotations.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Quotation
+                        </a>
+                        <a class="nav-link" href="{{ route('internship.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Internship
+                        </a>
+                        <a class="nav-link" href="{{ route('scholarship.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Scholarship
+                        </a>
+                        <a class="nav-link" href="{{ route('ranking.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Ranking
+                        </a>
+                        <a class="nav-link" href="{{ route('alumni.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Alumni
+                        </a>
+                        <a class="nav-link" href="{{ route('fileupload.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Downloadable FileUpload
+                        </a>
+                    </nav>
+                </div>
+
+                {{--frontend management end--}}
+
+                {{--Academic Information--}}
+
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#academic-information" aria-expanded="false" aria-controls="academic-information">
+                    <div class="sb-nav-link-icon"><i class="fas fa-school"></i></div>
+                    Academic Info
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
 
-                <a class="nav-link" href="{{ route('ranking.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Ranking
+                <div class="collapse" id="academic-information" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('teachers.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Teachers
+                        </a>
+                        <a class="nav-link" href="{{ route('course.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Courses
+                        </a>
+                        
+                    </nav>
+                </div>
+
+                {{--Academic Information end--}}
+
+                {{--Yearly Updates--}}
+
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#yearly-updates" aria-expanded="false" aria-controls="yearly-updates">
+                    <div class="sb-nav-link-icon"><i class="fas fa-calendar-week"></i></div>
+                    Yearly Updates
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
 
-                <a class="nav-link" href="{{ route('alumni.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Alumni
-                </a>
+                <div class="collapse" id="yearly-updates" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('year.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Yearwise Students
+                        </a>
 
-                <a class="nav-link" href="{{ route('year.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                   Year
-                </a>
+                        <a class="nav-link" href="{{ route('current_courses.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            Current Courses
+                        </a>                        
+                    </nav>
+                </div>
 
-                <a class="nav-link" href="{{ route('current_courses.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Current Courses
-                </a>
+                {{--Yearly Updates--}}
+
+                
+                
+                
+
+                
+
+                
 
                 <a class="nav-link" href="{{ route('year.students') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-poll"></i></div>
                     Upload Result
                 </a>
 
-                <a class="nav-link" href="{{ route('course.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Course
-                </a>
+                
                 <a class="nav-link" href="{{ route('teacher.evaluation.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                    Teacher Evaluation
                 </a>
 
 
                 
-                <a class="nav-link" href="{{ route('fileupload.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Downloadable FileUpload
-                </a>
+                
 {{-- 
                 <a class="nav-link" href="{{ route('markdestribution.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Mark Destribution
                 </a>
-
                 
                 <a class="nav-link" href="{{ route('markinput.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Mark Input
                 </a>
-
                 <a class="nav-link" href="{{ route('exam.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Exam
                 </a>
-
                 <a class="nav-link" href="{{ route('gradecategory.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Grade Description
                 </a>
-
                 <a class="nav-link" href="{{ route('grade.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                    Grade Input
@@ -111,7 +154,7 @@
                 {{--@can('user-management')--}}
 
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     User Management
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -167,5 +210,3 @@
         </div>
     </nav>
 </div>
-
-

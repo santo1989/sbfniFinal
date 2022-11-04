@@ -45,6 +45,7 @@ class TeacherController extends Controller
         try {
             $techer = Teacher::create([
                 'name' => $request->name,
+                'initial' => $request->initial,
                 'designation' => $request->designation,
                 'qualification' => $request->qualification,
                 'description' => $request->description,
@@ -86,6 +87,7 @@ class TeacherController extends Controller
         try {
             $requestData = [
                 'name' => $request->name,
+                'initial' => $request->initial,
                 'designation' => $request->designation,
                 'qualification' => $request->qualification,
                 'description' => $request->description,

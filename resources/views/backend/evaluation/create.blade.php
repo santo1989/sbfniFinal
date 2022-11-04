@@ -8,6 +8,7 @@
 
         </x-backend.layouts.elements.breadcrumb>
     </x-slot>
+<x-backend.layouts.elements.errors :errors="$errors" />
 <form action="{{ route('teacher.evaluation.store') }}" method="post">
     @csrf
     <table class="table table-striped table-dark table-bordered">

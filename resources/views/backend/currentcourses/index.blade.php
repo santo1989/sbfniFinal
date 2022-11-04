@@ -28,12 +28,14 @@
 
             <x-backend.layouts.elements.message :fmessage="session('message')" />
 
+            <x-backend.layouts.elements.errors :errors="$errors" />
+
             <!-- <table id="datatablesSimple"> -->
-            <form method="GET" action="#">
+            {{-- <form method="GET" action="#">
                 <x-backend.form.input style="width: 200px;" name='search' />
 
-            </form>
-            <table class="table table-dark table-striped">
+            </form> --}}
+            <table class="table table-dark table-striped" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>Sl#</th>
@@ -56,16 +58,16 @@
                         <td>{{$currentcourse->teacher->name }}</td>
                         
                         <td>
-                            <a class="btn btn-info btn-sm" href="#">Show</a>
+                            <a class="btn btn-info btn-sm" href="{{ route('current_courses.edit',[
+                                'current_course'=>$currentcourse->id
+                                ]) }}">Edit</a>
 
-                            <a class="btn btn-warning btn-sm" href="#">Edit</a>
-
-                            <form style="display:inline" action="#" method="post">
+                            {{-- <form action="{{ route('current_courses.destroy', $currentcourse->id) }}" method="post"
+                                style="display: inline-block">
                                 @csrf
                                 @method('delete')
-
-                                <button onclick="return confirm('Are you sure want to delete ?')" class="btn btn-sm btn-danger" type="submit">Delete</button>
-                            </form>
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form> --}}
 
                             {{-- <!-- <a href="{{ route('Teachers.destroy', ['teacher' =>$teacher->id]) }}" >Delete</a> --> --}}
 

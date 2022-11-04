@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\CourseRegistration;
 use App\Models\CurrentCourse;
 use App\Models\Result;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ResultController extends Controller
@@ -13,54 +14,57 @@ class ResultController extends Controller
     public function getCourses($course_year, $year, $student_id)
     {
         $courseIds = CourseRegistration::where('student_id', $student_id)->where('year', $year)->where('course_year', $course_year)->get();
+
+        $student = User::where('id', $student_id)->first();
+
         $currentList = [];
         foreach ($courseIds as $courseId) {
             
             array_push($currentList, $courseId->mycurrentcourse);
         }
         $course_ids = [];
+        $teachersWithInitials = [];
         foreach($currentList as $cl){
+            // dd($cl->teacher->name." (".$cl->teacher->initial.")");
             array_push($course_ids, $cl->course_id);
+            array_push($teachersWithInitials, $cl->teacher->name." (".$cl->teacher->initial.")");
         }
         $courses = [];
         foreach($course_ids as $course_id){
             array_push($courses, Course::find($course_id));
         }
+        
         // return [$currentList, $student_id,$course_year, $year, $courses];
-        return view('backend.result.courses', compact('currentList', 'student_id','course_year', 'year', 'courses'));
+        return view('backend.result.courses', compact('currentList', 'student_id','course_year', 'year', 'courses', 'student', 'teachersWithInitials'));
     }
     
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'currentcourse_id' => 'required',
+        $request->validate([
             'student_id' => 'required',
             'year' => 'required',
             'course_year' => 'required',
         ]);
-
-        dd(($request->all()));
-        $courses_id = [];
-        for($i = 0; $i<count($request->total); $i++){
-            array_push($courses_id, "course_id_".$i);
-        }
+        // dd($request->teacher[0]);
+        // $course_ids = [];
+        // for($i = 0; $i<count($request->total); $i++){
+        //     array_push($course_ids, "course_id_".$i);
+        // }
 
         for($i=0; $i<count($request->total); $i++){
             Result::create([
                 'student_id' => $request->student_id,
-                'currentcourse_id' => $request->course_id[$i],
+                'course_id' => $request->course_id[$i],
                 'year' => $request->year,
                 'course_year' => $request->course_year,
                 'written' => $request->written[$i],
                 'practical' => $request->practical[$i],
                 'formative' => $request->formative[$i],
                 'oral' => $request->oral[$i],
-                'written_pass' => $request->written_pass[$i],
-                'practical_pass' => $request->practical_pass[$i],
-                'formative_pass' => $request->formative_pass[$i],
-                'oral_pass' => $request->oral_pass[$i],
-                'total' => $request->total[$i],
-                'grade' => $request->grade[$i],
+                'total' =>
+                $request->written[$i] + $request->practical[$i] + $request->formative[$i] + $request->oral[$i],
+                'grade' => $request->grade[$i], //need to be calculated
+                'teacher' => $request->teacher[$i],
             ]);
         }
         return redirect()->back();
@@ -68,10 +72,10 @@ class ResultController extends Controller
 
     public function showResults($student_id)
     {
-        $firstYearResults = Result::where('student_id', $student_id)->where('course_year', '1')->get();
-        $secondYearResults = Result::where('student_id', $student_id)->where('course_year', '2')->get();
-        $thirdYearResults = Result::where('student_id', $student_id)->where('course_year', '3')->get();
-        // dd(count($secondYearResults));
+        $firstYearResults = Result::where('student_id', $student_id)->where('course_year', '1st')->get();
+        $secondYearResults = Result::where('student_id', $student_id)->where('course_year', '2nd')->get();
+        $thirdYearResults = Result::where('student_id', $student_id)->where('course_year', '3rd')->get();
+        // dd($firstYearResults);
         return view('backend.result.show', compact('firstYearResults', 'secondYearResults', 'thirdYearResults'));
     }
 }

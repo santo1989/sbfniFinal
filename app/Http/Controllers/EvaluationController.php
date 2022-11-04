@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\CourseRegistration;
 use App\Models\CurrentCourse;
 use App\Models\Evaluation;
+use Exception;
 use Illuminate\Http\Request;
 
 class EvaluationController extends Controller
@@ -14,6 +15,7 @@ class EvaluationController extends Controller
     {
         $courses = Course::all();
         $coursesTaken = CourseRegistration::where('student_id', $student_id)->where('year', $year)->get();
+
         return view('backend.evaluation.show', compact('courses', 'coursesTaken', 'student_id', 'year'));
     }
 
@@ -36,6 +38,18 @@ class EvaluationController extends Controller
         ]);
         // die("check");
         // dd($request->all());
+
+        if($request->all() == null){
+            return redirect()->back()->withErrors('Please fill all the fields');
+        }
+         if(Evaluation::where('id', $request->currentcourse_id)->where('teacher_id', $request->teacher_id)->exists()){
+            return redirect()->route('teacher.evaluation.show', [$request->student_id, $request->year])->withErrors( 'You have already evaluated this teacher');
+        }
+
+        if(auth()->user()->profile->current_year == null){
+            return redirect()->route('teacher.evaluation.show', [$request->student_id, $request->year])->withErrors( 'You have not registered for the current year');
+        }
+        try{
         $newEvaluation = Evaluation::create([
             'prepared' => $request->prepared,
             'knows_subject' => $request->knows_subject,
@@ -63,6 +77,9 @@ class EvaluationController extends Controller
         $newEvaluation->score = $score;
         $newEvaluation->update();
         return redirect()->route('teacher.evaluation.show', [$request->student_id, $request->year]);
+        }catch(Exception $e){
+            return redirect()->back()->withErrors('Something went wrong');
+        }
     }
 
     public function index()

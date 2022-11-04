@@ -1,4 +1,4 @@
-<x-backend.layouts.master>
+<x-backend.>
     <x-slot name="pageTitle">
         Teachers-Evaluation
     </x-slot>
@@ -15,6 +15,8 @@
 
 
             <x-backend.layouts.elements.message :fmessage="session('message')" />
+
+            <x-backend.layouts.elements.errors :errors="$errors" />
 
             
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

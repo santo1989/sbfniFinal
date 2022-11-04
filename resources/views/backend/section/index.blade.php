@@ -28,11 +28,11 @@
             <x-backend.layouts.elements.message :fmessage="session('message')" />
 
             <!-- <table id="datatablesSimple"> -->
-            <form method="GET" action="{{ route('section.index') }}">
+            {{-- <form method="GET" action="{{ route('section.index') }}">
                 <x-backend.form.input style="width: 200px;" name='search' />
 
-            </form>
-            <table class="table">
+            </form> --}}
+            <table class="table" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>Sl#</th>

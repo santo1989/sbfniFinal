@@ -40,11 +40,26 @@ class CourseController extends Controller
         $this->validate($request, [
             'course_name' => 'required',
             'course_code' => 'required',
+            'written_pass' => 'required',
+            'oral_pass' => 'required',
+            'formative_pass' => 'required',
+            'practical_pass' => 'required',
+            'total_written' => 'required',
+            'total_oral' => 'required',
+            'total_formative' => 'required',
         ]);
         try {
             Course::create([
                 'course_name' => $request->course_name,
                 'course_code' => $request->course_code,
+                'written_pass' => $request->written_pass,
+                'oral_pass' => $request->oral_pass,
+                'formative_pass' => $request->formative_pass,
+                'practical_pass' => $request->practical_pass,
+                'total_written' => $request->total_written,
+                'total_oral' => $request->total_oral,
+                'total_formative' => $request->total_formative,
+                'total_practical' => $request->total_practical,
             ]);
         } catch (QueryException $e) {
             return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
@@ -78,7 +93,14 @@ class CourseController extends Controller
          
             'course_name' => $request->course_name,
             'course_code' => $request->course_code,
-
+            'written_pass' => $request->written_pass,
+            'oral_pass' => $request->oral_pass,
+            'formative_pass' => $request->formative_pass,
+            'practical_pass' => $request->practical_pass,
+            'total_written' => $request->total_written,
+            'total_oral' => $request->total_oral,
+            'total_formative' => $request->total_formative,
+            'total_practical' => $request->total_practical,
         ]);
 
         $course->update();

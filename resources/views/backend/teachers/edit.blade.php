@@ -34,6 +34,7 @@
                 @csrf
                 @method('patch')
                 <x-backend.form.input name="name" :value="$teacher->name"/> 
+                <x-backend.form.input name="initial" :value="$teacher->initial"/> 
                 <x-backend.form.input name="designation" :value="$teacher->designation"/>
                 <x-backend.form.input name="qualification" :value="$teacher->qualification"/>
                 <x-backend.form.textarea name="description"> 

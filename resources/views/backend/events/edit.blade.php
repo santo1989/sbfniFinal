@@ -30,7 +30,7 @@
             </div>
             @endif
 
-            <form action="{{ route('events.update', ['event_id' => $single_event->id]) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('events.update', ['event' => $single_event->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
 

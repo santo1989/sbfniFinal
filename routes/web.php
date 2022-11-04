@@ -30,6 +30,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Route;
 
 
+//frontend
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
@@ -42,12 +43,7 @@ Route::get('/home/teacher_details/{teacher}', [HomeController::class, 'home_teac
 Route::get('/home/alumni_details/{alumni}', [HomeController::class, 'home_alumni_details'])->name('home_alumni_details');
 Route::get('/admission_information', [HomeController::class, 'admission_information'])->name('admission_information');
 Route::get('/admission_procedure', [HomeController::class, 'admission_procedure'])->name('admission_procedure');
-// Route::get('/download', function () {
-//     return Storage::download('public/files/admission_form.pdf');
-// })->name('admission_from');
 Route::get('/download', [HomeController::class, 'download'])->name('download');
-
-
 Route::get('/home/notices', [HomeController::class, 'home_notices'])->name('home_notices');
 Route::get('/home/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/home/internship', [HomeController::class, 'internship'])->name('internship');
@@ -81,7 +77,7 @@ Route::get('/vpmessage', [HomeController::class, 'guestmessage_vp'])->name('gues
 Route::post('/message', [HomeController::class, 'fstore'])->name('message.fstore');
 
 
-
+//Backend
 Route::middleware('auth')->group(function () {
     Route::get('/admin/home', function () {
         return view('backend.home');
@@ -99,7 +95,7 @@ Route::middleware('auth')->group(function () {
 
     // User
 
-    
+
     Route::get('/admin/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/admin/users/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/admin/users', [UserController::class, 'store'])->name('users.store');
@@ -114,7 +110,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/events/trashed-events/{events}/restore', [EventController::class, 'restore'])->name('events.restore');
     Route::delete('/admin/events/trashed-events/{events}/delete', [EventController::class, 'delete'])->name('events.delete');
 
-  
+
     Route::get('/admin/events', [EventController::class, 'index'])->name('events.index');
     Route::get('/admin/events/create', [EventController::class, 'create'])->name('events.create');
     Route::post('/admin/events', [EventController::class, 'store'])->name('events.store');
@@ -140,7 +136,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/notices/trashed-notices/{notice}/restore', [NoticeController::class, 'restore'])->name('notices.restore');
     Route::delete('/admin/notices/trashed-notices/{notice}/delete', [NoticeController::class, 'delete'])->name('notices.delete');
 
-    
+
     Route::get('/admin/notices', [NoticeController::class, 'index'])->name('notices.index');
     Route::get('/admin/notices/create', [NoticeController::class, 'create'])->name('notices.create');
     Route::post('/admin/notices', [NoticeController::class, 'store'])->name('notices.store');
@@ -157,7 +153,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/news/trashed-news/{news}/restore', [NewsController::class, 'restore'])->name('news.restore');
     Route::delete('/admin/news/trashed-news/{news}/delete', [NewsController::class, 'delete'])->name('news.delete');
 
- 
+
     Route::get('/admin/news', [NewsController::class, 'index'])->name('news.index');
     Route::get('/admin/news/create', [NewsController::class, 'create'])->name('news.create');
     Route::post('/admin/news', [NewsController::class, 'store'])->name('news.store');
@@ -173,7 +169,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/quotations/trashed-quotations/{quotation}/restore', [QuotationController::class, 'restore'])->name('quotations.restore');
     Route::delete('/admin/quotations/trashed-quotations/{quotation}/delete', [QuotationController::class, 'delete'])->name('quotations.delete');
 
-    
+
     Route::get('/admin/quotations', [QuotationController::class, 'index'])->name('quotations.index');
     Route::get('/admin/quotations/create', [QuotationController::class, 'create'])->name('quotations.create');
     Route::post('/admin/quotations', [QuotationController::class, 'store'])->name('quotations.store');
@@ -254,7 +250,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('admin/year-students', [YearController::class, 'showStudents'])->name("year.students");
 
-    Route::get('/admin/first-year/a-section/{course_year}/{year}', [YearController::class, 'showFirstYearASection'])->name("first-year.a-section");
+    Route::get('/admin/year-result/{course_year}/{year}', [YearController::class, 'showFirstYearASection'])->name("year-result");
     Route::post('admin/result/create', [ResultController::class, 'store'])->name('result.store');
 
     Route::get('/admin/result/{student_id}', [ResultController::class, 'showResults'])->name('result.showresults');
@@ -271,9 +267,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin/course_registration/store/{course_id}/{student_id}', [CourseRegistrationController::class, 'store'])->name('course-registration-store');
 
-    Route::get('/admin/get-courses/{course_year}/{year}/{student_id}', [ResultController::class, 'getCourses'])->name('result_getcourses');
+    Route::get('/admin/course_registration/delete/{course_id}/{student_id}', [CourseRegistrationController::class, 'delete'])->name('course-registration-delete');
 
-    
+    Route::get('/admin/get-courses/{course_year}/{year}/{student_id}', [ResultController::class, 'getCourses'])->name('result_getcourses');
 });
 
 Route::resource('/admin/message', MessageController::class);
@@ -288,4 +284,3 @@ require __DIR__ . '/auth.php';
 Route::get('/foo', function () {
     Artisan::call('storage:link');
 });
-

@@ -27,7 +27,7 @@
                 @csrf
                 {{-- <x-backend.form.input name="title"/>  --}}
                 <label for="title">Job Description</label>
-                <input type="text" name="title" class="form-control" id="title" placeholder="Enter Job Description">
+                <input type="text" name="title" class="form-control" id="title" placeholder="Enter Job Description" required>
                 <br>
                 
                 <x-backend.form.input name="img" type="file"/>

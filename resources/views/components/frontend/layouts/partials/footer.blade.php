@@ -1,5 +1,5 @@
  
-  <footer class="section page-footer" style="background-color:#FFF8EF; ">
+  <footer class="section page-footer mb-0" style="background-color:#FFF8EF; ">
       <div class="novi-background bg-cover bg-default" >
           <div class="shell-wide">
               <div class="hr bg-gray-light"></div>

@@ -38,6 +38,22 @@
 
                 <x-backend.form.input name="course_code" type="text" :value="$single_course->course_code"/>
 
+                <x-backend.form.input name="written_pass" type="number" :value="$single_course->written_pass"/>
+
+                <x-backend.form.input name="oral_pass" type="number" :value="$single_course->oral_pass"/>
+
+                <x-backend.form.input name="formative_pass" type="number" :value="$single_course->formative_pass"/>
+
+                <x-backend.form.input name="practical_pass" type="number" :value="$single_course->practical_pass"/>
+
+                <x-backend.form.input name="total_written" type="number" :value="$single_course->total_written"/>
+
+                <x-backend.form.input name="total_oral" type="number" :value="$single_course->total_oral"/>
+
+                <x-backend.form.input name="total_formative" type="number" :value="$single_course->total_formative"/>
+
+                <x-backend.form.input name="total_practical" type="number" :value="$single_course->total_practical"/>
+
                 
                 
                 <x-backend.form.button>Update</x-backend.form.button>

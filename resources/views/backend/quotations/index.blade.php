@@ -29,11 +29,11 @@
             <x-backend.layouts.elements.message :fmessage="session('message')" />
 
             <!-- <table id="datatablesSimple"> -->
-            <form method="GET" action="{{ route('quotations.index') }}">
+            {{-- <form method="GET" action="{{ route('quotations.index') }}">
                 <x-backend.form.input style="width: 200px;" name='search' />
 
-            </form>
-            <table class="table">
+            </form> --}}
+            <table class="table" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>Sl#</th>
@@ -58,7 +58,7 @@
                         <td>
                             <a class="btn btn-info btn-sm" href="{{ route('quotations.show', ['quotation' => $quotation->id]) }}">Show</a>
 
-                            <a class="btn btn-warning btn-sm" href="{{ route('quotations.edit', ['single_quotation_Edit' => $quotation->id]) }}">Edit</a>
+                            <a class="btn btn-warning btn-sm" href="{{ route('quotations.edit', ['quotation' => $quotation->id]) }}">Edit</a>
 
                             <form style="display:inline" action="{{ route('quotations.destroy', ['quotation' => $quotation->id]) }}" method="post">
                                 @csrf

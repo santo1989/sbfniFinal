@@ -10,8 +10,9 @@ class Result extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function currentcourses()
+    public function course()
     {
-        return $this->belongsTo(CurrentCourse::class, 'currentcourse_id');
+        return $this->belongsTo(Course::class, 'course_id');
     }
+
 }

@@ -47,7 +47,7 @@
 
     <section class="section novi-background bg-cover section-70 section-md-114 bg-default">
         <div class="shell">
-            <h1 class="main text-bold">Our Respected Teachers</h1>
+            <h1 class="main text-bold text-center">Our Respected Teachers</h1>
             <hr class="divider bg-madison">
             <div class="range range-30 text-md-left offset-top-60">
                 @forelse($teachers as $teacher)

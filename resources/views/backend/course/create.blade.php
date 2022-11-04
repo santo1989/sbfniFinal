@@ -30,6 +30,22 @@
 
                 <x-backend.form.input name="course_code" type="text"/>
 
+                <x-backend.form.input name="written_pass" type="number"/>
+
+                <x-backend.form.input name="oral_pass" type="number"/>
+
+                <x-backend.form.input name="formative_pass" type="number"/>
+
+                <x-backend.form.input name="practical_pass" type="number"/>
+
+                <x-backend.form.input name="total_written" type="number"/>
+
+                <x-backend.form.input name="total_oral" type="number"/>
+
+                <x-backend.form.input name="total_formative" type="number"/>
+
+                <x-backend.form.input name="total_practical" type="number"/>
+
                 <x-backend.form.button>Save</x-backend.form.button>
             </form>
         </div>

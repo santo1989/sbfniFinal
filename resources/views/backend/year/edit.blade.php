@@ -50,7 +50,7 @@
                         <option value="">Select Course</option>
                         
                             <option value="1st" {{ $single_year->course_year == '1st' ? 'selected' : '' }}>1st Year</option>
-                            <option value="2md" {{ $single_year->course_year == '2md' ? 'selected' : '' }}>2nd Year</option>
+                            <option value="2nd" {{ $single_year->course_year == '2nd' ? 'selected' : '' }}>2nd Year</option>
                             <option value="3rd" {{ $single_year->course_year == '3rd' ? 'selected' : '' }}>3rd Year</option>
                         
                     </select>

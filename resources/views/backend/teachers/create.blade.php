@@ -26,6 +26,7 @@
             <form action="{{ route('teachers.store') }}" enctype="multipart/form-data" method="post">
                 @csrf
                 <x-backend.form.input name="name"/> 
+                <x-backend.form.input name="initial"/> 
                 <x-backend.form.input name="designation"/>
                 <x-backend.form.input name="qualification"/>
                 <x-backend.form.textarea name="description" />

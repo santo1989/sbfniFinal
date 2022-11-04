@@ -1,7 +1,7 @@
 @props(['name'])
 
 <x-backend.form.field>
-    <textarea name="{{ $name }}" class="form-control" id="{{ $name }}">
+    <textarea name="{{ $name }}" class="form-control" id="{{ $name }}" required>
 
     {{ $slot ?? old($name) }}
 

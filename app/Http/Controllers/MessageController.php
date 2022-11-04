@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
-    
+
     public function index()
     {
 
@@ -37,25 +37,26 @@ class MessageController extends Controller
     }
 
 
-  
+
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required | email',
-            'message' => 'required | min:10 | max:1000',
-        ]);
+        // dd($request->all());
+
         try {
-            $messageTOUpdate=Message::create([
+            $this->validate($request, [
+                'name' => 'required',
+                'last_name' => 'required',
+                'email' => 'required | email',
+                'message' => 'required ',
+            ]);
+            $messageTOUpdate = Message::create([
                 'name' => $request->name,
                 'last_name' => $request->last_name,
                 'email' => $request->email,
                 'phone' => $request->phone,
                 'message' => $request->message,
-            ]);
-            {
+            ]); {
                 $notification = Notification::create([
                     'name' => "New message from " . $messageTOUpdate->email,
                     'status' => 'unread',
@@ -65,6 +66,7 @@ class MessageController extends Controller
                 ]);
                 $notification->link = $notification->link . '?notification_id=' . $notification->id;
                 $notification->update();
+                return redirect()->route('contact')->withMessage('Message sent successfully');
             }
         } catch (QueryException $e) {
             return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
@@ -72,7 +74,7 @@ class MessageController extends Controller
             return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
         }
 
-        return redirect()->route('home');
+        
     }
 
 
@@ -116,6 +118,17 @@ class MessageController extends Controller
     {
         try {
             $message->delete();
+            return redirect()->route('message.index')->withMessage('Successfully Deleted!');
+        } catch (QueryException $e) {
+            return redirect()->back()->withErrors($e->getMessage());
+        }
+    }
+
+    public function deleteall()
+    {
+        try {
+            Message::truncate();
+            Notification::truncate();
             return redirect()->route('message.index')->withMessage('Successfully Deleted!');
         } catch (QueryException $e) {
             return redirect()->back()->withErrors($e->getMessage());

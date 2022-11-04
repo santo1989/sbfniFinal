@@ -28,11 +28,11 @@
             <x-backend.layouts.elements.message :fmessage="session('message')" />
 
             <!-- <table id="datatablesSimple"> -->
-            <form method="GET" action="{{ route('alumni.index') }}">
+            {{-- <form method="GET" action="{{ route('alumni.index') }}">
                 <x-backend.form.input style="width: 200px;" name='search' />
 
-            </form>
-            <table class="table">
+            </form> --}}
+            <table class="table" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>Sl#</th>
@@ -91,5 +91,23 @@
             {{-- {{ $alumnis->links() }} --}}
         </div>
     </div>
-
+<script>
+//     $(document).ready(function() {
+//     $('#datatablesSimple').DataTable( {
+//         responsive: {
+//             details: {
+//                 display: $.fn.dataTable.Responsive.display.modal( {
+//                     header: function ( row ) {
+//                         var data = row.data();
+//                         return 'Details for '+data[0]+' '+data[1];
+//                     }
+//                 } ),
+//                 renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+//                     tableClass: 'table'
+//                 } )
+//             }
+//         }
+//     } );
+// } );
+</script>
 </x-backend.layouts.master>

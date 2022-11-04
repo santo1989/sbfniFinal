@@ -23,6 +23,24 @@
                 
                 <p><h4>Course Code  : </h4>{{ $show_course->course_code }}</p>
 
+                <p><h4>Written Pass  : </h4>{{ $show_course->written_pass }}</p>
+
+                <p><h4>Oral Pass  : </h4>{{ $show_course->oral_pass }}</p>
+
+                <p><h4>Formative Pass  : </h4>{{ $show_course->formative_pass }}</p>
+
+                <p><h4>Practical Pass  : </h4>{{ $show_course->practical_pass }}</p>
+
+                <p><h4>Total Written  : </h4>{{ $show_course->total_written }}</p>
+
+                <p><h4>Total Oral  : </h4>{{ $show_course->total_oral }}</p>
+
+                <p><h4>Total Formative  : </h4>{{ $show_course->total_formative }}</p>
+
+                <p><h4>Total Practical  : </h4>{{ $show_course->total_practical }}</p>
+
+                
+
         </div>
     </div>
 

@@ -13,7 +13,7 @@
         </x-backend.layouts.elements.breadcrumb>
     </x-slot>
 
-    <div class="card mb-4" style="width:fit-content">
+    <div class="card mb-4" >
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
             News
@@ -29,11 +29,11 @@
             <x-backend.layouts.elements.message :fmessage="session('message')" />
 
             <!-- <table id="datatablesSimple"> -->
-            <form method="GET" action="{{ route('news.index') }}">
+            {{-- <form method="GET" action="{{ route('news.index') }}">
                 <x-backend.form.input style="width: 200px;" name='search' />
 
-            </form>
-            <table class="table">
+            </form> --}}
+            <table class="table" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>Sl#</th>

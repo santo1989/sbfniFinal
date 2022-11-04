@@ -35,18 +35,19 @@
                 @method('put')
                 <input type="hidden" name="user_id" value={{ auth()->user()->id }}>
                <x-backend.form.input name="full_name" :value="$edit_profile->full_name"/>
-                {{-- <x-backend.form.input name="email" :value="$edit_profile->email"/> --}}
-                <x-backend.form.input name="phone" :value="$edit_profile->phone"/> <x-backend.form.input name="father_name" :value="$edit_profile->father_name"/>
+                <x-backend.form.input name="phone" :value="$edit_profile->phone" type="number"/> <x-backend.form.input name="father_name" :value="$edit_profile->father_name"/>
                 <x-backend.form.input name="mother_name" :value="$edit_profile->mother_name"/>
                 <x-backend.form.input name="address" :value="$edit_profile->address"/>
-                <x-backend.form.input name="nid" :value="$edit_profile->nid"/>
+                <x-backend.form.input name="nid" :value="$edit_profile->nid" type="number"/>
                 <x-backend.form.input name="dob" type="date" :value="$edit_profile->dob"/>
+                <label for="gender">Gender</label>
                 <select class="form-select mb-2" name="gender" id="" aria-label="Gender">
                     <option value="">Select One</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="others">Other</option>
                 </select>
+                <label for="blood_group">Blood Group</label>
                 <select class="form-select mb-2" name="blood_group" id="" aria-label="Blood Group">
                     <option value="">Select One</option>
                     <option value="A+">A+</option>
@@ -58,6 +59,7 @@
                     <option value="O+">O+</option>
                     <option value="O-">O-</option>
                 </select>
+                <label for="marital_status">Marital Status</label>
                 <select class="form-select mb-2" name="marital_status" id="" aria-label="Marital Status">
                     <option value="">Select One</option>
                     <option value="Single">Single</option>
@@ -65,21 +67,18 @@
                     <option value="Divorced">Divorced</option>
                     <option value="Widowed">Widowed</option>
                 </select>
-                <x-backend.form.input name="father_phone" :value="$edit_profile->father_phone"/>
+                <x-backend.form.input name="father_phone" :value="$edit_profile->father_phone" type="Number"/>
                 <x-backend.form.input name="parent_address" :value="$edit_profile->parent_address"/>
-                <x-backend.form.input name="current_year" :value="$edit_profile->current_year"/>
-
-                {{-- <x-backend.form.input name="session" :value="$edit_profile->session"/>
-                <x-backend.form.input name="course_name" :value="$edit_profile->course_name"/>
-                <x-backend.form.input name="current_status" :value="$edit_profile->current_status"/>
-                <x-backend.form.input name="result" :value="$edit_profile->result"/>
-                
-                
-                
-               
-                
-                <x-backend.form.input name="current_semester" :value="$edit_profile->current_semester"/>
-                <x-backend.form.input name="student_id" :value="$edit_profile->student_id"/> --}}
+                {{-- <x-backend.form.input name="current_year" :value="$edit_profile->current_year" type="Number
+                    "/> --}}
+                    <label for="current_year">Current Year</label>
+                    <select class="form-select mb-2" name="current_year" id="" aria-label="Current Year">
+                        <option value="">Select One</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option> 
+                    </select>
+                    <br/>
                 <x-backend.form.input name="image" type="file"/>
 
                 <x-backend.form.button>Update</x-backend.form.button>

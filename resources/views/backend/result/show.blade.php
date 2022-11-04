@@ -27,10 +27,11 @@
     @php $sl = 0; @endphp
     <tbody>
         @foreach ($firstYearResults as $firstYearResult)
+        
         <tr>
         <th scope="row">{{ ++$sl }}</th>
-        <td>{{ $firstYearResult->currentcourses->course->course_name }}</td>
-        <td>{{ $firstYearResult->currentcourses->teacher->name }}</td>
+        <td>{{ $firstYearResult->course->course_name }}</td>
+        <td>{{ $firstYearResult->teacher }}</td>
         <td>{{ $firstYearResult->formative }} / {{ $firstYearResult->formative_pass }}</td>
         <td>{{ $firstYearResult->written }} / {{ $firstYearResult->written_pass }}</td>
         <td>{{ $firstYearResult->oral }} / {{ $firstYearResult->oral_pass }}</td>        

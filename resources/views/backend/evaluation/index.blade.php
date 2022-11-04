@@ -24,13 +24,13 @@
         <div class="card-body">
 
             <x-backend.layouts.elements.message :fmessage="session('message')" />
-
+        <x-backend.layouts.elements.errors :errors="$errors" />
             <!-- <table id="datatablesSimple"> -->
-            <form method="GET" action="#">
+            {{-- <form method="GET" action="#">
                 <x-backend.form.input style="width: 200px;" name='search' />
 
-            </form>
-            <table class="table">
+            </form> --}}
+            <table class="table" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>Sl#</th>
